@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { createQuote } from "../../actions";
+import QuoteForm from "./QuoteForm";
 
-const CreateQuote = () => {
+class CreateQuote extends Component {
+  onSubmit = formValues => {
+    this.props.createQuote(formValues);
+  };
+
+  render() {
     return (
-        <div>
-          CreateQuote  
-        </div>
+      <div>
+        <h3>Create a Quote</h3>
+        <QuoteForm onSubmit={this.onSubmit} />
+      </div>
     );
-};
+  }
+}
 
-export default CreateQuote;
+export default connect(
+  null,
+  { createQuote }
+)(CreateQuote);
