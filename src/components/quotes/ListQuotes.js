@@ -13,7 +13,7 @@ class ListQuotes extends React.Component {
       return (
         <div className="right floated content">
           <Link to ={`/quotes/edit/${quote.id}`} className="ui button primary">Edit</Link>
-          <button className="ui button negative">Delete</button>
+          <Link to={`/quotes/delete/${quote.id}`} className="ui button negative">Delete</Link>
         </div>
       );
     }
@@ -33,15 +33,13 @@ class ListQuotes extends React.Component {
     });
   }
   renderCreate() {
-    if (this.props.isSignedIn) {
-      return (
-        <div style = {{ textAlign : 'right'}}>
-          <Link to="/quotes/new" className="ui button primary">
-            Create Quotes
-          </Link>
-        </div>
-      );
-    }
+    return (
+      <div style = {{ textAlign : 'right'}}>
+        <Link to="/quotes/new" className="ui button primary">
+          Create Quotes
+        </Link>
+      </div>
+    );
   }
 
   render() {

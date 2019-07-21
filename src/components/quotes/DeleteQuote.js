@@ -1,11 +1,55 @@
 import React from 'react';
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import Modal from "../Modal";
+import history from "../../history";
+import { fetchQuote, deleteQuote } from "../../actions";
 
-const DeleteQuote = () => {
+
+class DeleteQuote extends React.Component {
+  componentDidMount() {
+    this.props.fetchQuote(this.props.match.params.id);
+  }
+  renderActions() {
+    const { id } = this.props.match.params;
     return (
-        <div>
-          DeleteQuote  
-        </div>
+      <React.Fragment>
+        <button
+          onClick={() => this.props.deleteQuote(id)}
+          className="ui button negative"
+        >
+          Delete
+        </button>
+        <Link to="/" className="ui button">
+          Cancel
+        </Link>
+      </React.Fragment>
     );
+  }
+  renderContent() {
+    if (!this.props.quote) {
+      return "Are you sure you want to delete this quote?";
+    }
+    return `Are you sure you want to delete this quote with title: ${
+      this.props.quote.id
+    }?`;
+  }
+  render() {
+    return (
+      <Modal
+        title="Delete Quote"
+        content={this.renderContent()}
+        actions={this.renderActions()}
+        onDismiss={() => history.push("/")}
+      />
+    );
+  }
+}
+const mapStateToProps = (state, ownProps) => {
+  return { quote: state.quotes[ownProps.match.params.id] };
 };
 
-export default DeleteQuote;
+export default connect(
+  mapStateToProps,
+  { fetchQuote, deleteQuote }
+)(DeleteQuote);

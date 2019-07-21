@@ -33,5 +33,6 @@ export const createQuote = formValues => async (dispatch, getState) => {
     export const deleteQuote = id => async dispatch => {
       await quotes.delete(`/quotes/${id}`);
       dispatch({ type: DELETE_QUOTE, payload: id });
+      history.push('/');
     };
     
