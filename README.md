@@ -69,3 +69,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 
 stefan's notes :this is a boilerplate react app according to stephen grider course.
+this is the server that goes with it 
+https://github.com/Quest1mc/3001api
