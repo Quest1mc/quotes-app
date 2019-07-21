@@ -69,3 +69,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 
 stefan's notes :this is a boilerplate react app according to stephen grider course.
+
+this is also now a boilerplate crud app without any authentication. 
