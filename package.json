@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "browserslist": "^4.6.6",
+    "concurrently": "^4.1.1",
     "lodash": "^4.17.15",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -15,7 +17,10 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start ",
+    "json-server": "json-server --watch db.json --port 3001",
+    "server": "yarn --cwd ./api run start",
+    "dev": "concurrently -k \"yarn run server\" \"yarn start\" ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -34,5 +39,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
