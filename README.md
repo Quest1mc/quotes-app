@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project was built with React JS & Redux 
 
-![alt text](quotes-app/quotes-app screenshot.png "Screenshot of Quotes App")
+![alt text](/quotes-app screenshot.png "Screenshot of Quotes App")
 
 
 ## Available Scripts
