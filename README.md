@@ -2,6 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project was built with React JS & Redux 
 
+![alt text](https://github.com/Quest1mc/quotes-app/master/quotes-app screenshot.png "Screenshot of Qoutes App")
 
 ## Available Scripts
 
